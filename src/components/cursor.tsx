@@ -1,16 +1,10 @@
-import { assets } from "@/utils/asset-utils";
 import Image from "next/image";
 import { useState, useEffect, RefObject } from "react";
 
-export const Cursor = ({
-  buttonRef,
-}: {
-  buttonRef: RefObject<HTMLButtonElement>;
-}) => {
-  const [cursorPosition, setCursorPosition] = useState({
-    x: -100,
-    y: -100,
-  });
+import { assets } from "@/utils/asset-utils";
+
+export const Cursor = ({ buttonRef }: { buttonRef: RefObject<HTMLButtonElement> }) => {
+  const [cursorPosition, setCursorPosition] = useState({ x: -100, y: -100 });
 
   useEffect(() => {
     async function animateCursor() {
@@ -28,7 +22,7 @@ export const Cursor = ({
       setCursorPosition({ x, y: newY });
 
       buttonRef.current.style.transition = "transform 700ms ease-in-out";
-      buttonRef.current.style.transform = `translateY(150px)`;
+      buttonRef.current.style.transform  = `translateY(150px)`;
 
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -41,10 +35,7 @@ export const Cursor = ({
   return (
     <Image
       className={`duration-700 absolute transition-all ease-in-out z-50`}
-      style={{
-        top: `${cursorPosition.y}px`,
-        left: `${cursorPosition.x}px`,
-      }}
+      style={{ top: `${cursorPosition.y}px`, left: `${cursorPosition.x}px` }}
       alt="Cursor"
       src={assets.cursor}
       width={80}

@@ -1,7 +1,8 @@
 import Image from "next/image";
+
+import { cn } from "@/utils/tailwind-utils";
 import { assets } from "@/utils/asset-utils";
 import { type Framework, frameworks } from "@/utils/framework-utils";
-import { cn } from "@/utils/tailwind-utils";
 
 export const FrameworkRotation = ({
   currentFramework,

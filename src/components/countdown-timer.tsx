@@ -1,13 +1,10 @@
-import { calculateTimeToEvent } from "@/utils/countdown-utils";
-import { type Framework } from "@/utils/framework-utils";
 import { useState, useEffect } from "react";
-import { TimeUnit } from "./time-unit";
 
-export const CountdownTimer = ({
-  currentFramework,
-}: {
-  currentFramework: Framework;
-}) => {
+import { TimeUnit } from "./time-unit";
+import { type Framework } from "@/utils/framework-utils";
+import { calculateTimeToEvent } from "@/utils/countdown-utils";
+
+export const CountdownTimer = ({ currentFramework, }: { currentFramework: Framework }) => {
   const [countdown, setCountdown] = useState(calculateTimeToEvent());
 
   useEffect(() => {
