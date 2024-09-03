@@ -13,6 +13,7 @@ const poppins = Poppins({
   weight: "700",
   subsets: ["latin"],
 });
+
 export default function Home() {
   const [currentFramework, setCurrentFramework] = useState<Framework>(
     frameworks[0]
@@ -36,7 +37,6 @@ export default function Home() {
 
   return (
     <main>
-      {/* Background color */}
       <div
         className={cn(
           "fixed inset-0 transition-color delay-100 duration-700 opacity-25",
@@ -152,7 +152,6 @@ export default function Home() {
               Claim Ticket
             </button>
           </div>
-          {/* Countdown timer */}
           <CountdownTimer currentFramework={currentFramework} />
         </div>
       </div>
